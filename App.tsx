@@ -1,5 +1,6 @@
 
 import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import GameCard from './components/GameCard';
 import PlatformModal from './components/PlatformModal';
@@ -97,6 +98,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-[#0b0f14] text-white flex flex-col antialiased">
+      <Analytics />
       {/* Container constrained to mobile/desktop app view matching screenshot */}
       <div className="w-full max-w-2xl mx-auto flex flex-col flex-1 pb-16">
         {/* Top Navigation: Search, View Mode Toggle, Category Tabs */}
