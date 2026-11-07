@@ -5,6 +5,7 @@ import Header from './components/Header';
 import GameCard from './components/GameCard';
 import PlatformModal from './components/PlatformModal';
 import ProgressModal from './components/ProgressModal';
+import LiveDownloadNotifications from './components/LiveDownloadNotifications';
 import { GAMES_DATA, Icons } from './constants';
 import { Game } from './types';
 
@@ -199,6 +200,9 @@ const App: React.FC = () => {
           onContinue={handleDownloadContinue}
         />
       )}
+
+      {/* Simulated Live Download Popup Notifications */}
+      <LiveDownloadNotifications />
     </div>
   );
 };

@@ -637,7 +637,7 @@ export const GAMES_DATA: Game[] = [
   {
     "id": "rooftops-and-alleys",
     "title": "Rooftops & Alleys",
-    "imageUrl": "https://i.postimg.cc/6pZX11pW/nba2k14-sq-1644342520432.webp",
+    "imageUrl": "https://i.postimg.cc/NGDM5w7G/header.jpg",
     "size": "1.4 GB",
     "rating": 4.7,
     "devices": [
