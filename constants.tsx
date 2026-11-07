@@ -544,9 +544,9 @@ export const GAMES_DATA: Game[] = [
     "description": "Arthur Morgan and the Van der Linde gang fight for survival across the dying frontier of 1899 America."
   },
   {
-    "id": "inside-mobile",
-    "title": "Inside Mobile",
-    "imageUrl": "https://i.postimg.cc/6q4j5gS8/1cf3189182c0590efb17a040fd06ce26.jpg",
+    "id": "the-last-of-us-1",
+    "title": "the last of us 1",
+    "imageUrl": "https://i.postimg.cc/sDPtVVpx/The-Last-of-Us-Part-I.webp",
     "size": "1.1 GB",
     "rating": 4.8,
     "devices": [
@@ -554,7 +554,7 @@ export const GAMES_DATA: Game[] = [
       "ios"
     ],
     "category": "ACTION",
-    "description": "Haunting, atmospheric puzzle platformer guiding a solitary boy drawn into the core of a dark conspiracy."
+    "description": "Fast matches with unlocked features."
   },
   {
     "id": "assassins-creed-mirage-mobile",
