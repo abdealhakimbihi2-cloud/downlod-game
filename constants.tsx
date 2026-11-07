@@ -622,9 +622,9 @@ export const GAMES_DATA: Game[] = [
     "description": "Revolutionary soft-body physics driving simulator with realistic deformation and stunt sandbox maps."
   },
   {
-    "id": "nba-2k14",
-    "title": "NBA 2K14",
-    "imageUrl": "https://i.postimg.cc/mrNGTzM9/6404024.png",
+    "id": "uncharted--4",
+    "title": "uncharted 4",
+    "imageUrl": "https://i.postimg.cc/1XfLm6rG/MV5BNTFm-N2M0MGMt-MTI5Ny00Nz-Rl-LWFl-ZGYt-ZDM0N2Vm-OTUw-YTdm-Xk-Ey-Xk-Fqc-Gc-V1-FMjpg-UX1000.jpg",
     "size": "1.8 GB",
     "rating": 4.7,
     "devices": [
@@ -632,7 +632,7 @@ export const GAMES_DATA: Game[] = [
       "ios"
     ],
     "category": "SPORTS",
-    "description": "Classic NBA basketball simulation featuring LeBron James Path to Greatness and Euroleague rosters."
+    "description": "puzzle video game , an action."
   },
   {
     "id": "rooftops-and-alleys",
