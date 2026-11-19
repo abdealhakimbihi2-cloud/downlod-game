@@ -5,7 +5,7 @@ import Header from './components/Header';
 import GameCard from './components/GameCard';
 import PlatformModal from './components/PlatformModal';
 import ProgressModal from './components/ProgressModal';
-import LiveDownloadNotifications from './components/LiveDownloadNotifications';
+import GTA6Announcement from './components/GTA6Announcement';
 import { GAMES_DATA, Icons } from './constants';
 import { Game } from './types';
 
@@ -19,6 +19,11 @@ const App: React.FC = () => {
   const [selectedGame, setSelectedGame] = useState<Game | null>(null);
   const [activeModal, setActiveModal] = useState<'none' | 'platform' | 'progress'>('none');
   const [selectedPlatform, setSelectedPlatform] = useState<'android' | 'ios' | null>(null);
+
+  const gta6Game = useMemo(
+    () => GAMES_DATA.find((g) => g.id === 'gta-6-mobile'),
+    []
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -102,6 +107,14 @@ const App: React.FC = () => {
       <Analytics />
       {/* Container constrained to mobile/desktop app view matching screenshot */}
       <div className="w-full max-w-2xl mx-auto flex flex-col flex-1 pb-16">
+        {/* Large GTA 6 Announcement Banner */}
+        {gta6Game && (
+          <GTA6Announcement
+            game={gta6Game}
+            onDownload={handleInstallClick}
+          />
+        )}
+
         {/* Top Navigation: Search, View Mode Toggle, Category Tabs */}
         <Header 
           searchQuery={searchQuery} 
@@ -200,9 +213,6 @@ const App: React.FC = () => {
           onContinue={handleDownloadContinue}
         />
       )}
-
-      {/* Simulated Live Download Popup Notifications */}
-      <LiveDownloadNotifications />
     </div>
   );
 };

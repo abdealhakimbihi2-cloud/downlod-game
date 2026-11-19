@@ -24,17 +24,17 @@ export const HERO_SLIDES: HeroSlide[] = [
 
 export const GAMES_DATA: Game[] = [
   {
-    "id": "left-4-dead-2",
-    "title": "Left 4 Dead 2",
-    "imageUrl": "https://i.postimg.cc/fb2kMrmG/left-4-dead-2-game-icon-by-mec120-d55x3hp-375w-2x.png",
-    "size": "2.6 GB",
-    "rating": 4.8,
+    "id": "gta-6-mobile",
+    "title": "GTA 6 Mobile",
+    "imageUrl": "https://i.postimg.cc/QtpWqqRB/gta-6-arrivera-sur-pc-mais-pas-l-89cd8f45-image-507398f33-jpg.webp",
+    "size": "4.2 GB",
+    "rating": 4.9,
     "devices": [
       "android",
       "ios"
     ],
-    "category": "ACTION",
-    "description": "Cooperative first-person zombie apocalypse shooter featuring campaign mode and melee combat."
+    "category": "OPEN WORLD",
+    "description": "Return to sun-soaked Leonida and Vice City in the most anticipated open-world criminal adventure."
   },
   {
     "id": "skate-4",
@@ -63,9 +63,9 @@ export const GAMES_DATA: Game[] = [
     "description": "Hawaiian island car festival with diverse vehicle playlists, supercars, and online multiplayer."
   },
   {
-    "id": "etiket-pro",
-    "title": "Etiket Pro",
-    "imageUrl": "https://i.postimg.cc/Tw1GQ2yS/etiket-Pro.jpg",
+    "id": "the-last-of-us--1",
+    "title": "the last of us 1",
+    "imageUrl": "https://i.postimg.cc/dV2y2HPL/The-Last-of-Us-Part-I.webp",
     "size": "850 MB",
     "rating": 4.6,
     "devices": [
@@ -73,7 +73,7 @@ export const GAMES_DATA: Game[] = [
       "ios"
     ],
     "category": "SIMULATION",
-    "description": "Turkish street car drifting and driving simulator with full vehicle tuning and modded physics."
+    "description": "Story-driven survival."
   },
   {
     "id": "snowrunner",
@@ -648,17 +648,17 @@ export const GAMES_DATA: Game[] = [
     "description": "Parkour and freerunning action across intricate urban rooftops with fluid momentum tricks and flow state."
   },
   {
-    "id": "gta-6-mobile",
-    "title": "GTA 6 Mobile",
-    "imageUrl": "https://i.postimg.cc/QtpWqqRB/gta-6-arrivera-sur-pc-mais-pas-l-89cd8f45-image-507398f33-jpg.webp",
-    "size": "4.2 GB",
-    "rating": 4.9,
+    "id": "left-4-dead-2",
+    "title": "Left 4 Dead 2",
+    "imageUrl": "https://i.postimg.cc/fb2kMrmG/left-4-dead-2-game-icon-by-mec120-d55x3hp-375w-2x.png",
+    "size": "2.6 GB",
+    "rating": 4.8,
     "devices": [
       "android",
       "ios"
     ],
-    "category": "OPEN WORLD",
-    "description": "Return to sun-soaked Leonida and Vice City in the most anticipated open-world criminal adventure."
+    "category": "ACTION",
+    "description": "Cooperative first-person zombie apocalypse shooter featuring campaign mode and melee combat."
   },
   {
     "id": "spider-man-miles-morales",
