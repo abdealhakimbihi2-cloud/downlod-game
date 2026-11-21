@@ -33,6 +33,19 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const scriptSrc = 'https://bicea.org/21/9da3988721b0256c5cf47778452aa906';
+    const container = document.getElementById('container-9da3988721b0256c5cf47778452aa906');
+
+    if (container && !document.querySelector(`script[src="${scriptSrc}"]`)) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.setAttribute('data-cfasync', 'false');
+      script.src = scriptSrc;
+      container.parentNode?.insertBefore(script, container);
+    }
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -157,6 +170,21 @@ const App: React.FC = () => {
             </div>
           )}
         </main>
+
+        {/* Adsterra Native Banner - Bottom of Landing Page */}
+        <footer className="w-full px-4 mt-10 pt-6 border-t border-[#1b2431]">
+          <div className="w-full mx-auto rounded-2xl bg-[#131922] border border-[#1f2937] p-3 sm:p-4 flex flex-col items-center justify-center overflow-hidden">
+            <span className="text-[11px] font-semibold text-gray-500 uppercase tracking-wider mb-3">
+              Advertisement
+            </span>
+            <div className="w-full flex justify-center items-center min-h-[90px] overflow-x-auto">
+              <div
+                id="container-9da3988721b0256c5cf47778452aa906"
+                className="w-full flex justify-center items-center"
+              ></div>
+            </div>
+          </div>
+        </footer>
 
         {/* Floating Scroll To Top Button */}
         {showScrollTop && (
