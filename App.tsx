@@ -33,6 +33,20 @@ const App: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const scriptSrc = 'https://pl31259014.profitableratecpmnetwork.com/f6928743e53f7d1404630e9ceca531c2/invoke.js';
+    const container = document.getElementById('container-f6928743e53f7d1404630e9ceca531c2');
+
+    if (container && !document.querySelector(`script[src="${scriptSrc}"]`)) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.setAttribute('data-cfasync', 'false');
+      script.src = scriptSrc;
+      container.parentNode?.insertBefore(script, container);
+    }
+  }, []);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -156,6 +170,18 @@ const App: React.FC = () => {
               </button>
             </div>
           )}
+
+          {/* Advertisement / إعلان bar matching screenshot */}
+          <div className="mt-8 pt-4 border-t border-[#1b2431]">
+            <div className="flex items-center justify-between text-xs text-gray-500 uppercase tracking-wider px-1 mb-3">
+              <span>ADVERTISEMENT</span>
+              <span>إعلان</span>
+            </div>
+            {/* Adsterra Native Banner */}
+            <div className="w-full flex justify-center items-center min-h-[90px] overflow-hidden">
+              <div id="container-f6928743e53f7d1404630e9ceca531c2" className="w-full"></div>
+            </div>
+          </div>
         </main>
 
         {/* Floating Scroll To Top Button */}
