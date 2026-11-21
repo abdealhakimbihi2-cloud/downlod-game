@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Game } from '../types';
 import { Icons } from '../constants';
 import GameImage from './GameImage';
@@ -10,7 +10,12 @@ interface PlatformModalProps {
   onSelect: (platform: 'android' | 'ios') => void;
 }
 
+const MONETAG_SCRIPT_SRC = 'https://quge5.com/88/tag.min.js';
+const MONETAG_ZONE_ID = '313464';
+
 const PlatformModal: React.FC<PlatformModalProps> = ({ game, onClose, onSelect }) => {
+  const monetagSlotRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -19,13 +24,31 @@ const PlatformModal: React.FC<PlatformModalProps> = ({ game, onClose, onSelect }
     return () => window.removeEventListener('keydown', handleEsc);
   }, [onClose]);
 
+  useEffect(() => {
+    const slot = monetagSlotRef.current;
+    if (!slot) return;
+
+    // Only inject the script if not already loaded globally to avoid duplicate ad scripts
+    const existingScript = document.querySelector(
+      `script[src="${MONETAG_SCRIPT_SRC}"][data-zone="${MONETAG_ZONE_ID}"]`
+    );
+    if (existingScript) return;
+
+    const script = document.createElement('script');
+    script.src = MONETAG_SCRIPT_SRC;
+    script.setAttribute('data-zone', MONETAG_ZONE_ID);
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    slot.appendChild(script);
+  }, [game.id]);
+
   return (
     <div 
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200 overflow-y-auto"
       onClick={onClose}
     >
       <div 
-        className="relative bg-[#131922] text-white w-full max-w-[420px] rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#1f2937] animate-in zoom-in-95 duration-200"
+        className="relative bg-[#131922] text-white w-full max-w-[420px] max-h-[90vh] overflow-y-auto no-scrollbar rounded-3xl p-6 sm:p-8 shadow-2xl border border-[#1f2937] animate-in zoom-in-95 duration-200 my-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button 
@@ -92,6 +115,13 @@ const PlatformModal: React.FC<PlatformModalProps> = ({ game, onClose, onSelect }
               </div>
             </button>
           </div>
+
+          {/* Monetag Multitag placement directly below iOS Device option */}
+          <div
+            ref={monetagSlotRef}
+            data-monetag-zone={MONETAG_ZONE_ID}
+            className="w-full"
+          />
         </div>
       </div>
     </div>
